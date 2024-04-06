@@ -1,4 +1,4 @@
-package tw.team6.config;
+package com.team6.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

@@ -1,4 +1,4 @@
-package tw.team6.controller;
+package com.team6.controller;
 
 import java.util.HashMap;
 import java.util.Map;

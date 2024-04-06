@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="tw.team6.model.Delivery" %>
+<%@ page import="com.team6.model.Delivery" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +65,7 @@ a {
 			<td><%=delivery.getAddress()%></td>
 			<td><%=delivery.getTime()%>分鐘</td>
 			<td><button id="del" onclick="confirmDelete('<%=delivery.getId()%>')">刪除</button></td>
-			<td><a href="/team6/update/<%=delivery.getId()%>"><button>修改</button></a></td>
+			<td><a href="/team6/delivery/update/<%=delivery.getId()%>"><button>修改</button></a></td>
 	<%}%>
 <%}%>
 		</tr>
@@ -82,7 +82,7 @@ a {
         var confirmDelete = confirm("您確定要刪除此項目嗎？");
         if (confirmDelete) {
             // 如果用户点击了确定，则将其重定向到删除链接
-            window.location.href = "/team6/del/" + deliveryId;
+            window.location.href = "/team6/delivery/del/" + deliveryId;
         } else {
             // 如果用户点击了取消，则不执行任何操作
             return false;
@@ -91,11 +91,11 @@ a {
 
 $(document).ready(function(){
 	$('#add').click(function(){
-    	let homeURL = "/team6/add";
+    	let homeURL = "/team6/delivery/add";
     	window.location.href = homeURL;
 	});
 	$('#upd').click(function(){
-    	let homeURL = "/team6/upd";
+    	let homeURL = "/team6/delivery/upd";
     	window.location.href = homeURL;
 	});
 	

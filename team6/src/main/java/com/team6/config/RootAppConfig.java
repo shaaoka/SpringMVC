@@ -1,4 +1,4 @@
-package tw.team6.config;
+package com.team6.config;
 
 import java.util.Properties;
 
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 // beans.config.xml java設定方式
 @Configuration
-@ComponentScan(basePackages="tw.team6")
+@ComponentScan(basePackages="com.team6")
 @EnableWebMvc
 @EnableTransactionManagement
 public class RootAppConfig {
@@ -36,7 +36,7 @@ public class RootAppConfig {
 	public LocalSessionFactoryBean sessionFactory()throws IllegalArgumentException, NamingException {
 		LocalSessionFactoryBean factory = new LocalSessionFactoryBean();
 		factory.setDataSource(dataSource());
-		factory.setPackagesToScan("tw.team6");
+		factory.setPackagesToScan("com.team6");
 		factory.setHibernateProperties(addProperties());
 		return factory;
 	}

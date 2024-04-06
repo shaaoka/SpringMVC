@@ -1,4 +1,4 @@
-package tw.team6.config;
+package com.team6.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 //相當於mvc-servlet.xml 的java程式組態
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"tw.team6"})
+@ComponentScan(basePackages = {"com.team6"})
 public class WebAppConfig implements WebMvcConfigurer {
 
 		

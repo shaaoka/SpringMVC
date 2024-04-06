@@ -22,7 +22,7 @@ button {
 	<div align="center">
 
 		<h2>修改訂單資料</h2>
-		<form:form method="post" action="/team6/upd" modelAttribute="delivery">
+		<form:form method="post" action="/team6/delivery/upd" modelAttribute="delivery">
 			<table>
 				<tr>
 					<td>訂單編號</td>
@@ -62,7 +62,7 @@ button {
 				</tr>
 			</table>
 			<form:button type="submit" value="send">更新</form:button>
-			<a href="/team6/home">回上一頁</a>
+			<a href="/team6/delivery">回上一頁</a>
 		</form:form>
 	</div>
 </body>

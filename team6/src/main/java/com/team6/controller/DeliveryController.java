@@ -1,4 +1,4 @@
-package tw.team6.controller;
+package com.team6.controller;
 
 
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import tw.team6.model.Delivery;
-import tw.team6.model.DeliveryService;
+import com.team6.model.Delivery;
+import com.team6.model.DeliveryService;
 
 
 @Controller
@@ -25,21 +25,21 @@ public class DeliveryController {
 
 	
 	
-	//查詢全部 測試網址http://localhost:8080/team6/home
-	@GetMapping("/home")
+	//查詢全部 測試網址http://localhost:8080/team6/delivery
+	@GetMapping("/delivery")
 	public String Home(Model model) {
 		List<Delivery> delivery = service.findAll();
 		model.addAttribute("delivery",delivery);  	
 		return "GetAll";
 	}
 	//測試網址http://localhost:8080/team6/add
-	@GetMapping("/add")
+	@GetMapping("/delivery/add")
 	public String Add() {
 		return "insert";			
 	}
 	
 	//新增   
-	@PostMapping("/insert")
+	@PostMapping("/delivery/insert")
 	public String Insert(
 						 @RequestParam("cname") String cname,
 						 @RequestParam("phone") String phone,
@@ -51,31 +51,31 @@ public class DeliveryController {
 						 @RequestParam("time") int time){
 		Delivery result = new Delivery(cname,phone,product,num,price,ename,address,time);
 		service.insert(result);
-		return "redirect:/home";
+		return "redirect:/delivery";
 	}
 	
 	
 
 	//查詢單筆
-	@GetMapping("/update/{id}")
+	@GetMapping("/delivery/update/{id}")
 	public String Update(@PathVariable("id") int id ,Model m){
 		Delivery delivery = service.findById(id);
 		m.addAttribute("delivery",delivery);
 		return "DoUpdate";
 	}
 	//修改
-	@PostMapping("/upd")
+	@PostMapping("/delivery/upd")
 	public String Upd(@ModelAttribute("delivery")Delivery delivery) {
 		service.update(delivery);
-		return "redirect:/home";		
+		return "redirect:/delivery";		
 	}
 	
 	
 	//刪除
-	@GetMapping("/del/{id}")
+	@GetMapping("/delivery/del/{id}")
 	public String processDeleteAction(@PathVariable("id") int id) {
 		service.Del(id);
-		return "redirect:/home";
+		return "redirect:/delivery";
 
 	}
 }

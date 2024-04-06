@@ -1,4 +1,4 @@
-<%@page import="tw.team6.model.Delivery"%>
+<%@page import="com.team6.model.Delivery"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ button {
 
 <div align="center" class="container mt-5">
   <h2>新增外送訂單</h2>
-  <form  action="/team6/insert" method="post">
+  <form  action="/team6/delivery/insert" method="post">
    <table>
   	<tr>
     <td>顧客姓名
@@ -91,7 +91,7 @@ button {
  $(document).ready(function() {
 	 
 	 $("#home").click(function(){
-		    let homeURL = "http://localhost:8080/team6/home";
+		    let homeURL = "http://localhost:8080/team6/delivery";
 		    window.location.href = homeURL;
 		});
 		

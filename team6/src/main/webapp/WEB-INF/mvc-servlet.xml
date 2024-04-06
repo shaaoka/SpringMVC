@@ -12,7 +12,7 @@
 	<mvc:annotation-driven/>
 	可以直接透過java註冊 -->
 	<context:annotation-config/>
-	<context:component-scan base-package="tw.team6"/>
+	<context:component-scan base-package="com.team6"/>
 	<mvc:annotation-driven/>
 	
 	
